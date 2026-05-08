@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html><head><meta charset="UTF-8">
+<link rel="stylesheet" href="../colors_and_type.css">
+<style>
+* { box-sizing: border-box; margin: 0; padding: 0; }
+body { background: #fff; padding: 28px 24px; font-family: 'Inter', sans-serif; }
+.label { font-size: 10px; font-weight: 700; letter-spacing: 0.08em; text-transform: uppercase; color: #A8A8A8; margin-bottom: 10px; font-family: 'Inter', sans-serif; }
+.usage { display: flex; flex-direction: column; gap: 16px; }
+.use-row { display: flex; align-items: center; gap: 16px; }
+.stripe { height: 4px; background: var(--gradient-stripe); }
+.stripe-8 { height: 8px; background: var(--gradient-stripe); }
+.stripe-hero { height: 32px; background: var(--gradient-stripe); }
+.desc { font-size: 12px; color: #707070; font-family: 'Inter', sans-serif; width: 140px; flex-shrink: 0; }
+.demo { flex: 1; }
+/* Animated sweep */
+@keyframes sweep { from { background-position: 200% center; } to { background-position: -200% center; } }
+.stripe-animated {
+  height: 6px;
+  background: var(--gradient-stripe);
+  background-size: 200% auto;
+  animation: sweep 2s linear infinite;
+}
+</style>
+</head><body>
+<div class="usage">
+  <div>
+    <div class="label">Section Divider — 4px</div>
+    <div class="stripe"></div>
+  </div>
+  <div>
+    <div class="label">Rule — 8px</div>
+    <div class="stripe-8"></div>
+  </div>
+  <div>
+    <div class="label">Hero Feature Bar — 32px</div>
+    <div class="stripe-hero"></div>
+  </div>
+  <div>
+    <div class="label">Loading / Progress Animation</div>
+    <div class="stripe-animated"></div>
+  </div>
+  <div style="background:#000; padding:20px;">
+    <div class="label" style="color:#484848;">On Dark Background</div>
+    <div class="stripe-8"></div>
+  </div>
+</div>
+</body></html>

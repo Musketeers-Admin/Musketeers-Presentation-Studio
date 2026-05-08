@@ -1,0 +1,249 @@
+/* ============================================================
+   MUSKETEERS DESIGN SYSTEM — Colors & Typography
+   ============================================================ */
+
+/* ── Font Faces ─────────────────────────────────────────── */
+@font-face { font-family: 'Inter'; src: url('fonts/Inter-Thin.otf'); font-weight: 100; font-style: normal; }
+@font-face { font-family: 'Inter'; src: url('fonts/Inter-Light.otf'); font-weight: 300; font-style: normal; }
+@font-face { font-family: 'Inter'; src: url('fonts/Inter-Regular.otf'); font-weight: 400; font-style: normal; }
+@font-face { font-family: 'Inter'; src: url('fonts/Inter-Italic.otf'); font-weight: 400; font-style: italic; }
+@font-face { font-family: 'Inter'; src: url('fonts/Inter-Medium.otf'); font-weight: 500; font-style: normal; }
+@font-face { font-family: 'Inter'; src: url('fonts/Inter-SemiBold.otf'); font-weight: 600; font-style: normal; }
+@font-face { font-family: 'Inter'; src: url('fonts/Inter-Bold.otf'); font-weight: 700; font-style: normal; }
+@font-face { font-family: 'Inter'; src: url('fonts/Inter-ExtraBold.otf'); font-weight: 800; font-style: normal; }
+@font-face { font-family: 'Inter'; src: url('fonts/Inter-Black.otf'); font-weight: 900; font-style: normal; }
+@font-face { font-family: 'Inter'; src: url('fonts/Inter-BlackItalic.otf'); font-weight: 900; font-style: italic; }
+@font-face { font-family: 'Inter'; src: url('fonts/Inter-BoldItalic.otf'); font-weight: 700; font-style: italic; }
+@font-face { font-family: 'Inter'; src: url('fonts/Inter-ExtraBoldItalic.otf'); font-weight: 800; font-style: italic; }
+@font-face { font-family: 'Inter'; src: url('fonts/Inter-LightItalic.otf'); font-weight: 300; font-style: italic; }
+@font-face { font-family: 'Inter'; src: url('fonts/Inter-MediumItalic.otf'); font-weight: 500; font-style: italic; }
+@font-face { font-family: 'Inter'; src: url('fonts/Inter-SemiBoldItalic.otf'); font-weight: 600; font-style: italic; }
+
+@font-face { font-family: 'Inter Display'; src: url('fonts/InterDisplay-Thin.otf') format('opentype'); font-weight: 100; font-style: normal; }
+@font-face { font-family: 'Inter Display'; src: url('fonts/InterDisplay-Light.otf') format('opentype'); font-weight: 300; font-style: normal; }
+@font-face { font-family: 'Inter Display'; src: url('fonts/InterDisplay-Regular.otf') format('opentype'); font-weight: 400; font-style: normal; }
+@font-face { font-family: 'Inter Display'; src: url('fonts/InterDisplay-Medium.otf') format('opentype'); font-weight: 500; font-style: normal; }
+@font-face { font-family: 'Inter Display'; src: url('fonts/InterDisplay-SemiBold.otf') format('opentype'); font-weight: 600; font-style: normal; }
+@font-face { font-family: 'Inter Display'; src: url('fonts/InterDisplay-Bold.otf') format('opentype'); font-weight: 700; font-style: normal; }
+@font-face { font-family: 'Inter Display'; src: url('fonts/InterDisplay-ExtraBold.otf') format('opentype'); font-weight: 800; font-style: normal; }
+@font-face { font-family: 'Inter Display'; src: url('fonts/InterDisplay-Black.otf') format('opentype'); font-weight: 900; font-style: normal; }
+
+/* ── Color Tokens ───────────────────────────────────────── */
+:root {
+  /* Base */
+  --color-black:        #000000;
+  --color-white:        #FFFFFF;
+
+  /* Neutral Scale */
+  --color-gray-100:     #F5F5F5;
+  --color-gray-200:     #E8E8E8;
+  --color-gray-300:     #D0D0D0;
+  --color-gray-400:     #A8A8A8;
+  --color-gray-500:     #707070;
+  --color-gray-600:     #484848;
+  --color-gray-700:     #282828;
+  --color-gray-800:     #181818;
+  --color-gray-900:     #0C0C0C;
+
+  /* Brand Accents */
+  --color-red:          #FC2E12;
+  --color-blue:         #0D41FF;
+  --color-green:        #30E047;
+  --color-yellow:       #FFD81D;
+
+  /* Gradient accent (appears in logo stripe) */
+  --color-purple:       #6A00D0;
+  --color-teal:         #009A88;
+
+  /* Diversity Stripe Gradient */
+  --gradient-stripe: linear-gradient(
+    to right,
+    #FFD81D 0%,
+    #FC2511 33%,
+    #6A00D0 49%,
+    #2431F3 58%,
+    #0D41FF 67%,
+    #009A88 82%,
+    #30E047 100%
+  );
+
+  /* Semantic Colors */
+  --color-bg:           var(--color-white);
+  --color-bg-dark:      var(--color-black);
+  --color-bg-subtle:    var(--color-gray-100);
+  --color-fg:           var(--color-black);
+  --color-fg-on-dark:   var(--color-white);
+  --color-fg-muted:     var(--color-gray-500);
+  --color-fg-subtle:    var(--color-gray-400);
+  --color-border:       var(--color-gray-200);
+  --color-border-dark:  var(--color-gray-700);
+
+  /* Interactive */
+  --color-cta:          var(--color-black);
+  --color-cta-hover:    var(--color-gray-700);
+  --color-cta-text:     var(--color-white);
+  --color-link:         var(--color-blue);
+  --color-success:      var(--color-green);
+  --color-error:        var(--color-red);
+  --color-warning:      var(--color-yellow);
+
+  /* ── Typography Tokens ──────────────────────────────────── */
+  --font-display:       'Inter Display', 'Inter', sans-serif;
+  --font-body:          'Inter', sans-serif;
+
+  /* Type Scale (display) */
+  --text-display-xl:    clamp(64px, 8vw, 120px);
+  --text-display-lg:    clamp(48px, 6vw, 80px);
+  --text-display-md:    clamp(36px, 4vw, 56px);
+  --text-display-sm:    clamp(28px, 3vw, 40px);
+
+  /* Type Scale (body) */
+  --text-xl:            24px;
+  --text-lg:            20px;
+  --text-md:            16px;
+  --text-sm:            14px;
+  --text-xs:            12px;
+
+  /* Weight */
+  --weight-thin:        100;
+  --weight-light:       300;
+  --weight-regular:     400;
+  --weight-medium:      500;
+  --weight-semibold:    600;
+  --weight-bold:        700;
+  --weight-extrabold:   800;
+  --weight-black:       900;
+
+  /* Leading */
+  --leading-tight:      1.05;
+  --leading-snug:       1.2;
+  --leading-normal:     1.5;
+  --leading-relaxed:    1.7;
+
+  /* Tracking */
+  --tracking-tight:     -0.04em;
+  --tracking-snug:      -0.02em;
+  --tracking-normal:    0em;
+  --tracking-wide:      0.04em;
+  --tracking-wider:     0.1em;
+
+  /* ── Spacing ────────────────────────────────────────────── */
+  --space-1:   4px;
+  --space-2:   8px;
+  --space-3:   12px;
+  --space-4:   16px;
+  --space-5:   24px;
+  --space-6:   32px;
+  --space-7:   48px;
+  --space-8:   64px;
+  --space-9:   96px;
+  --space-10:  128px;
+  --space-11:  192px;
+  --space-12:  256px;
+
+  /* ── Radii ──────────────────────────────────────────────── */
+  --radius-none:   0px;
+  --radius-sm:     2px;
+  --radius-md:     4px;
+  --radius-lg:     8px;
+  --radius-xl:     16px;
+  --radius-full:   9999px;
+
+  /* ── Shadows ────────────────────────────────────────────── */
+  --shadow-sm:   0 1px 3px rgba(0,0,0,0.08);
+  --shadow-md:   0 4px 16px rgba(0,0,0,0.10);
+  --shadow-lg:   0 12px 40px rgba(0,0,0,0.14);
+  --shadow-xl:   0 24px 80px rgba(0,0,0,0.18);
+
+  /* ── Transitions ────────────────────────────────────────── */
+  --ease-standard: cubic-bezier(0.4, 0, 0.2, 1);
+  --ease-enter:    cubic-bezier(0, 0, 0.2, 1);
+  --ease-exit:     cubic-bezier(0.4, 0, 1, 1);
+  --duration-fast: 120ms;
+  --duration-mid:  240ms;
+  --duration-slow: 400ms;
+}
+
+/* ── Base Semantic Styles ───────────────────────────────── */
+body {
+  font-family: var(--font-body);
+  font-weight: var(--weight-regular);
+  font-size: var(--text-md);
+  line-height: var(--leading-normal);
+  color: var(--color-fg);
+  background: var(--color-bg);
+  -webkit-font-smoothing: antialiased;
+  text-rendering: optimizeLegibility;
+}
+
+h1 {
+  font-family: var(--font-display);
+  font-size: var(--text-display-lg);
+  font-weight: var(--weight-black);
+  line-height: var(--leading-tight);
+  letter-spacing: var(--tracking-tight);
+  margin: 0;
+}
+h2 {
+  font-family: var(--font-display);
+  font-size: var(--text-display-md);
+  font-weight: var(--weight-extrabold);
+  line-height: var(--leading-tight);
+  letter-spacing: var(--tracking-snug);
+  margin: 0;
+}
+h3 {
+  font-family: var(--font-display);
+  font-size: var(--text-display-sm);
+  font-weight: var(--weight-bold);
+  line-height: var(--leading-snug);
+  letter-spacing: var(--tracking-snug);
+  margin: 0;
+}
+h4 {
+  font-family: var(--font-body);
+  font-size: var(--text-xl);
+  font-weight: var(--weight-semibold);
+  line-height: var(--leading-snug);
+  margin: 0;
+}
+h5 {
+  font-family: var(--font-body);
+  font-size: var(--text-lg);
+  font-weight: var(--weight-semibold);
+  margin: 0;
+}
+h6 {
+  font-family: var(--font-body);
+  font-size: var(--text-md);
+  font-weight: var(--weight-semibold);
+  letter-spacing: var(--tracking-wide);
+  text-transform: uppercase;
+  margin: 0;
+}
+p {
+  font-size: var(--text-md);
+  line-height: var(--leading-normal);
+  color: var(--color-fg);
+}
+small {
+  font-size: var(--text-sm);
+  color: var(--color-fg-muted);
+}
+a {
+  color: var(--color-link);
+  text-decoration: none;
+}
+a:hover {
+  text-decoration: underline;
+}
+
+/* ── Utility: Diversity Stripe ──────────────────────────── */
+.stripe {
+  height: 4px;
+  background: var(--gradient-stripe);
+  width: 100%;
+}
+.stripe--thick {
+  height: 8px;
+}

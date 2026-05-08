@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html><head><meta charset="UTF-8">
+<link rel="stylesheet" href="../colors_and_type.css">
+<style>
+* { box-sizing: border-box; margin: 0; padding: 0; }
+body { background: #fff; padding: 24px 20px; font-family: 'Inter', sans-serif; }
+.stripe-xl { height: 40px; background: var(--gradient-stripe); }
+.stripe-md { height: 8px; background: var(--gradient-stripe); margin-top: 16px; }
+.stripe-sm { height: 4px; background: var(--gradient-stripe); margin-top: 12px; }
+.label { font-size: 10px; font-weight: 600; letter-spacing: 0.08em; text-transform: uppercase; color: #A8A8A8; margin-top: 8px; font-family: 'Inter', sans-serif; }
+.dark { background: #000; padding: 24px 20px; margin-top: 20px; }
+.dark .stripe-md { margin-top: 0; }
+.dark .label { color: #484848; }
+.stops { display: flex; gap: 8px; margin-top: 16px; flex-wrap: wrap; }
+.stop { display: flex; align-items: center; gap: 5px; }
+.stop-dot { width: 10px; height: 10px; border-radius: 50%; }
+.stop-label { font-size: 10px; color: #707070; font-family: 'Inter', sans-serif; }
+</style>
+</head><body>
+<div class="stripe-xl"></div>
+<div class="label">Hero / Feature Stripe</div>
+<div class="stripe-md"></div>
+<div class="label">Section Divider (8px)</div>
+<div class="stripe-sm"></div>
+<div class="label">Rule Line (4px)</div>
+<div class="stops">
+  <div class="stop"><div class="stop-dot" style="background:#FFD81D"></div><span class="stop-label">#FFD81D</span></div>
+  <div class="stop"><div class="stop-dot" style="background:#FC2511"></div><span class="stop-label">#FC2511</span></div>
+  <div class="stop"><div class="stop-dot" style="background:#6A00D0"></div><span class="stop-label">#6A00D0</span></div>
+  <div class="stop"><div class="stop-dot" style="background:#0D41FF"></div><span class="stop-label">#0D41FF</span></div>
+  <div class="stop"><div class="stop-dot" style="background:#009A88"></div><span class="stop-label">#009A88</span></div>
+  <div class="stop"><div class="stop-dot" style="background:#30E047"></div><span class="stop-label">#30E047</span></div>
+</div>
+<div class="dark">
+  <div class="stripe-md"></div>
+  <div class="label">On dark background</div>
+</div>
+</body></html>

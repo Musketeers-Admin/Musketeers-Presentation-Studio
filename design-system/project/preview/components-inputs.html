@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html><head><meta charset="UTF-8">
+<link rel="stylesheet" href="../colors_and_type.css">
+<style>
+* { box-sizing: border-box; margin: 0; padding: 0; }
+body { background: #F5F5F5; padding: 28px 24px; font-family: 'Inter', sans-serif; }
+.form { background: #fff; border-radius: 16px; padding: 28px; display: flex; flex-direction: column; gap: 18px; box-shadow: 0 2px 12px rgba(0,0,0,0.07); }
+.field-group { display: flex; flex-direction: column; gap: 5px; }
+.field-label { font-size: 13px; font-weight: 500; color: #000; font-family: 'Inter', sans-serif; }
+input, textarea, select {
+  font-family: 'Inter', sans-serif;
+  font-size: 15px;
+  color: #000;
+  background: #F5F5F5;
+  border: 1.5px solid transparent;
+  border-radius: 10px;
+  padding: 11px 14px;
+  width: 100%;
+  outline: none;
+  transition: border-color 150ms, background 150ms;
+  -webkit-appearance: none;
+}
+input::placeholder, textarea::placeholder { color: #A8A8A8; }
+input:focus, textarea:focus, select:focus {
+  background: #fff;
+  border-color: #000;
+}
+input.error { background: #FFF5F5; border-color: #FC2E12; }
+input.success { background: #F5FFF7; border-color: #30E047; }
+.hint { font-size: 12px; color: #A8A8A8; font-family: 'Inter', sans-serif; padding-left: 2px; }
+.hint.err { color: #FC2E12; }
+.hint.ok  { color: #30E047; }
+.row2 { display: grid; grid-template-columns: 1fr 1fr; gap: 12px; }
+select { background-image: url("data:image/svg+xml,%3Csvg width='12' height='8' viewBox='0 0 12 8' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M1 1L6 7L11 1' stroke='%23A8A8A8' stroke-width='1.5' stroke-linecap='round' stroke-linejoin='round'/%3E%3C/svg%3E"); background-repeat: no-repeat; background-position: right 14px center; padding-right: 36px; cursor: pointer; }
+</style>
+</head><body>
+<div class="form">
+  <div class="row2">
+    <div class="field-group">
+      <div class="field-label">First Name</div>
+      <input type="text" placeholder="Kristen">
+    </div>
+    <div class="field-group">
+      <div class="field-label">Last Name</div>
+      <input type="text" placeholder="Monroe">
+    </div>
+  </div>
+  <div class="field-group">
+    <div class="field-label">Email Address</div>
+    <input type="email" class="success" value="kristen@musketeers.co">
+    <div class="hint ok">Looks good.</div>
+  </div>
+  <div class="field-group">
+    <div class="field-label">Password</div>
+    <input type="password" class="error" value="short">
+    <div class="hint err">Must be at least 8 characters.</div>
+  </div>
+  <div class="field-group">
+    <div class="field-label">Service</div>
+    <select>
+      <option value="">Select a service</option>
+      <option>Brand Identity</option>
+      <option>Website Design</option>
+      <option>AI Operations</option>
+      <option>Growth Strategy</option>
+    </select>
+  </div>
+  <div class="field-group">
+    <div class="field-label">Tell us about your project</div>
+    <textarea rows="3" placeholder="What are you building?"></textarea>
+  </div>
+</div>
+</body></html>

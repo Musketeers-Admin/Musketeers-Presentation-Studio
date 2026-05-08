@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html><head><meta charset="UTF-8">
+<link rel="stylesheet" href="../colors_and_type.css">
+<style>
+* { box-sizing: border-box; margin: 0; padding: 0; }
+body { background: #fff; font-family: 'Inter', sans-serif; }
+.grid { display: grid; grid-template-columns: 1fr 1fr; }
+.cell { padding: 40px; display: flex; flex-direction: column; gap: 12px; align-items: flex-start; justify-content: center; }
+.cell-dark { background: #000; }
+.logo-wrap img { max-height: 36px; width: auto; display: block; }
+.meta { font-size: 10px; font-weight: 600; letter-spacing: 0.08em; text-transform: uppercase; color: #A8A8A8; font-family: 'Inter', sans-serif; }
+.meta-light { color: #484848; }
+</style>
+</head><body>
+<div class="grid">
+  <div class="cell">
+    <div class="meta">Wordmark — Dark</div>
+    <div class="logo-wrap">
+      <img src="../assets/wordmark-dark.svg" alt="Musketeers wordmark dark">
+    </div>
+  </div>
+  <div class="cell cell-dark">
+    <div class="meta meta-light">Wordmark — Light</div>
+    <div class="logo-wrap">
+      <img src="../assets/wordmark-light.svg" alt="Musketeers wordmark light">
+    </div>
+  </div>
+</div>
+</body></html>

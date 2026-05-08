@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html><head><meta charset="UTF-8">
+<link rel="stylesheet" href="../colors_and_type.css">
+<style>
+* { box-sizing: border-box; margin: 0; padding: 0; }
+body { background: #fff; padding: 20px; font-family: 'Inter', sans-serif; }
+.grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: 12px; }
+.card { border-radius: 2px; overflow: hidden; }
+.swatch { height: 80px; }
+.info { padding: 8px 10px; border: 1px solid #E8E8E8; border-top: none; }
+.name { font-size: 11px; font-weight: 700; letter-spacing: 0.04em; text-transform: uppercase; font-family: 'Inter', sans-serif; }
+.hex { font-size: 10px; color: #707070; font-family: 'Inter', sans-serif; margin-top: 2px; }
+.use { font-size: 10px; color: #A8A8A8; font-family: 'Inter', sans-serif; margin-top: 2px; }
+</style>
+</head><body>
+<div class="grid">
+  <div class="card">
+    <div class="swatch" style="background:#FC2E12;"></div>
+    <div class="info">
+      <div class="name">Red</div>
+      <div class="hex">#FC2E12</div>
+      <div class="use">Urgency · Energy</div>
+    </div>
+  </div>
+  <div class="card">
+    <div class="swatch" style="background:#0D41FF;"></div>
+    <div class="info">
+      <div class="name">Blue</div>
+      <div class="hex">#0D41FF</div>
+      <div class="use">Trust · Technology</div>
+    </div>
+  </div>
+  <div class="card">
+    <div class="swatch" style="background:#30E047;"></div>
+    <div class="info">
+      <div class="name">Green</div>
+      <div class="hex">#30E047</div>
+      <div class="use">Growth · Success</div>
+    </div>
+  </div>
+  <div class="card">
+    <div class="swatch" style="background:#FFD81D;"></div>
+    <div class="info">
+      <div class="name">Yellow</div>
+      <div class="hex">#FFD81D</div>
+      <div class="use">Warmth · Optimism</div>
+    </div>
+  </div>
+</div>
+</body></html>

@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html><head><meta charset="UTF-8">
+<link rel="stylesheet" href="../colors_and_type.css">
+<style>
+* { box-sizing: border-box; margin: 0; padding: 0; }
+body { background: #fff; padding: 24px; font-family: 'Inter', sans-serif; }
+.row { display: flex; gap: 12px; align-items: center; flex-wrap: wrap; margin-bottom: 20px; }
+.label { font-size: 10px; font-weight: 700; letter-spacing: 0.08em; text-transform: uppercase; color: #A8A8A8; margin-bottom: 10px; font-family: 'Inter', sans-serif; }
+button { font-family: 'Inter', sans-serif; cursor: pointer; letter-spacing: 0; transition: all 120ms; }
+/* Primary */
+.btn-primary { background: #000; color: #fff; border: none; padding: 12px 28px; font-size: 15px; font-weight: 600; }
+.btn-primary:hover { background: #282828; }
+/* Secondary */
+.btn-secondary { background: #fff; color: #000; border: 2px solid #000; padding: 10px 26px; font-size: 15px; font-weight: 600; }
+/* Ghost */
+.btn-ghost { background: transparent; color: #000; border: 1px solid #D0D0D0; padding: 10px 26px; font-size: 15px; font-weight: 500; }
+/* Accent */
+.btn-accent-r { background: #FC2E12; color: #fff; border: none; padding: 12px 28px; font-size: 15px; font-weight: 600; }
+.btn-accent-b { background: #0D41FF; color: #fff; border: none; padding: 12px 28px; font-size: 15px; font-weight: 600; }
+/* Small */
+.btn-sm { background: #000; color: #fff; border: none; padding: 8px 18px; font-size: 13px; font-weight: 600; }
+/* Disabled */
+.btn-disabled { background: #D0D0D0; color: #A8A8A8; border: none; padding: 12px 28px; font-size: 15px; font-weight: 600; cursor: not-allowed; }
+/* Dark BG row */
+.dark-row { background: #000; padding: 16px; display: flex; gap: 12px; align-items: center; flex-wrap: wrap; }
+.btn-primary-inv { background: #fff; color: #000; border: none; padding: 12px 28px; font-size: 15px; font-weight: 600; font-family: 'Inter', sans-serif; cursor: pointer; }
+.btn-outline-inv { background: transparent; color: #fff; border: 2px solid #fff; padding: 10px 26px; font-size: 15px; font-weight: 600; font-family: 'Inter', sans-serif; cursor: pointer; }
+</style>
+</head><body>
+<div class="label">Primary & Secondary</div>
+<div class="row">
+  <button class="btn-primary">Get Started</button>
+  <button class="btn-secondary">Learn More</button>
+  <button class="btn-ghost">View All</button>
+</div>
+<div class="label">Accent Variants</div>
+<div class="row">
+  <button class="btn-accent-r">Let's Talk</button>
+  <button class="btn-accent-b">Explore Solutions</button>
+</div>
+<div class="label">Sizes & States</div>
+<div class="row">
+  <button class="btn-sm">Small</button>
+  <button class="btn-primary">Default</button>
+  <button class="btn-disabled" disabled>Disabled</button>
+</div>
+<div class="label">On Dark</div>
+<div class="dark-row">
+  <button class="btn-primary-inv">Get Started</button>
+  <button class="btn-outline-inv">Learn More</button>
+</div>
+</body></html>

@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html><head><meta charset="UTF-8">
+<link rel="stylesheet" href="../colors_and_type.css">
+<style>
+* { box-sizing: border-box; margin: 0; padding: 0; }
+body { background: #fff; padding: 20px; font-family: 'Inter', sans-serif; }
+.grid { display: grid; grid-template-columns: repeat(6, 1fr); gap: 8px; }
+.token { display: flex; flex-direction: column; align-items: center; gap: 6px; }
+.bar-wrap { display: flex; align-items: flex-end; height: 80px; }
+.bar { background: #000; width: 20px; }
+.name { font-size: 9px; font-weight: 700; letter-spacing: 0.04em; text-transform: uppercase; color: #707070; font-family: 'Inter', sans-serif; }
+.val { font-size: 9px; color: #A8A8A8; font-family: 'Inter', sans-serif; }
+</style>
+</head><body>
+<div class="grid">
+  <div class="token"><div class="bar-wrap"><div class="bar" style="height:4px"></div></div><div class="name">space-1</div><div class="val">4px</div></div>
+  <div class="token"><div class="bar-wrap"><div class="bar" style="height:8px"></div></div><div class="name">space-2</div><div class="val">8px</div></div>
+  <div class="token"><div class="bar-wrap"><div class="bar" style="height:12px"></div></div><div class="name">space-3</div><div class="val">12px</div></div>
+  <div class="token"><div class="bar-wrap"><div class="bar" style="height:16px"></div></div><div class="name">space-4</div><div class="val">16px</div></div>
+  <div class="token"><div class="bar-wrap"><div class="bar" style="height:24px"></div></div><div class="name">space-5</div><div class="val">24px</div></div>
+  <div class="token"><div class="bar-wrap"><div class="bar" style="height:32px"></div></div><div class="name">space-6</div><div class="val">32px</div></div>
+  <div class="token"><div class="bar-wrap"><div class="bar" style="height:48px"></div></div><div class="name">space-7</div><div class="val">48px</div></div>
+  <div class="token"><div class="bar-wrap"><div class="bar" style="height:64px"></div></div><div class="name">space-8</div><div class="val">64px</div></div>
+  <div class="token"><div class="bar-wrap"><div class="bar" style="height:75px; opacity:.5"></div></div><div class="name">space-9</div><div class="val">96px</div></div>
+  <div class="token"><div class="bar-wrap"><div class="bar" style="height:75px; opacity:.3"></div></div><div class="name">space-10</div><div class="val">128px</div></div>
+  <div class="token"><div class="bar-wrap"><div class="bar" style="height:75px; opacity:.15"></div></div><div class="name">space-11</div><div class="val">192px</div></div>
+  <div class="token"><div class="bar-wrap"><div class="bar" style="height:75px; opacity:.08"></div></div><div class="name">space-12</div><div class="val">256px</div></div>
+</div>
+</body></html>

@@ -1,0 +1,154 @@
+<!DOCTYPE html>
+<html><head><meta charset="UTF-8">
+<link rel="stylesheet" href="../colors_and_type.css">
+<style>
+* { box-sizing: border-box; margin: 0; padding: 0; }
+body { background: #E8E8E8; padding: 20px; font-family: 'Inter', sans-serif; }
+.grid { display: grid; grid-template-columns: 1fr 1fr; gap: 12px; }
+.slide { width: 100%; aspect-ratio: 16/9; position: relative; overflow: hidden; box-shadow: 0 2px 12px rgba(0,0,0,0.10); }
+.slide-label { position: absolute; bottom: -1px; left: 0; right: 0; background: rgba(0,0,0,0.85); color: #fff; font-size: 10px; font-weight: 600; letter-spacing: 0.06em; text-transform: uppercase; padding: 5px 10px; text-align: center; z-index: 10; }
+
+/* Shared slide internals */
+.s-inner { width: 100%; height: 100%; padding: 8%; display: flex; flex-direction: column; position: relative; }
+.s-wordmark { position: absolute; top: 7%; left: 50%; transform: translateX(-50%); height: 7px; width: auto; opacity: 0.5; }
+.s-wordmark-light { opacity: 0.4; }
+.s-label { font-family: 'Inter', sans-serif; font-size: 5px; font-weight: 700; letter-spacing: 0.12em; text-transform: uppercase; color: #A8A8A8; }
+.s-label-light { color: rgba(255,255,255,0.35); }
+.s-headline { font-family: 'Inter Display','Inter',sans-serif; font-weight: 900; letter-spacing: -0.05em; line-height: 0.9; color: #000; }
+.s-headline-light { color: #fff; }
+.s-body { font-family: 'Inter',sans-serif; font-weight: 400; line-height: 1.5; color: #707070; }
+.s-body-light { color: rgba(255,255,255,0.5); }
+.s-stat { font-family: 'Inter Display','Inter',sans-serif; font-weight: 900; letter-spacing: -0.05em; line-height: 1.0; color: #000; }
+
+/* Stripe */
+.s-stripe { height: 2px; background: linear-gradient(to right,#FFD81D 0%,#FC2511 33%,#6A00D0 49%,#2431F3 58%,#0D41FF 67%,#009A88 82%,#30E047 100%); }
+</style>
+</head><body>
+
+<div class="grid">
+
+  <!-- 1. TITLE SLIDE -->
+  <div class="slide" style="background:#fff;">
+    <div class="s-inner">
+      <img src="../assets/wordmark-dark.svg" class="s-wordmark" alt="">
+      <div style="flex:1; display:flex; flex-direction:column; justify-content:center; gap:6px; padding-top:10%;">
+        <div class="s-label">Brand &amp; Business Solutions</div>
+        <div class="s-headline" style="font-size:28px;">Beautiful<br>user<br>experiences</div>
+      </div>
+      <div class="s-label" style="position:absolute; bottom:8%; left:8%;">About Musketeers</div>
+    </div>
+    <div class="slide-label">01 — Title</div>
+  </div>
+
+  <!-- 2. STAT SLIDE -->
+  <div class="slide" style="background:#fff;">
+    <div class="s-inner" style="align-items:center; justify-content:center;">
+      <img src="../assets/wordmark-dark.svg" class="s-wordmark" alt="">
+      <div class="s-label" style="margin-bottom:6px;">Revenue Growth</div>
+      <div class="s-stat" style="font-size:48px;">23%</div>
+      <div class="s-body" style="font-size:5px; text-align:center; margin-top:4px; max-width:70%;">Year-over-year growth driven by persistent innovation and versatile solutions.</div>
+    </div>
+    <div class="slide-label">02 — Big Stat</div>
+  </div>
+
+  <!-- 3. STATEMENT / QUOTE SLIDE -->
+  <div class="slide" style="background:#fff;">
+    <div class="s-inner">
+      <img src="../assets/wordmark-dark.svg" class="s-wordmark" alt="">
+      <div style="flex:1; display:flex; flex-direction:column; justify-content:center; padding: 0 4%;">
+        <div class="s-headline" style="font-size:14px; font-weight:700; line-height:1.2; letter-spacing:-0.03em;">We help entrepreneurs with versatile solutions, driven by persistent innovation that feels vital to their growth.</div>
+      </div>
+      <div style="display:flex; justify-content:space-between; align-items:flex-end;">
+        <div class="s-label">What We Do</div>
+        <div class="s-body" style="font-size:4.5px; max-width:40%; text-align:right;">As leading experts in our field we also provide consulting and training.</div>
+      </div>
+    </div>
+    <div class="slide-label">03 — Statement</div>
+  </div>
+
+  <!-- 4. SECTION DIVIDER (DARK) -->
+  <div class="slide" style="background:#000;">
+    <div class="s-inner" style="justify-content:flex-end;">
+      <img src="../assets/wordmark-light.svg" class="s-wordmark s-wordmark-light" alt="">
+      <div class="s-headline s-headline-light" style="font-size:36px; margin-bottom:4px;">Our Work</div>
+      <div class="s-body-light" style="font-size:4.5px;">As leading experts in our field we also provide training in the form of workshops.</div>
+      <div class="s-stripe" style="position:absolute; bottom:0; left:0; right:0;"></div>
+    </div>
+    <div class="slide-label">04 — Section Divider</div>
+  </div>
+
+  <!-- 5. TWO-COLUMN TEXT -->
+  <div class="slide" style="background:#fff;">
+    <div class="s-inner">
+      <img src="../assets/wordmark-dark.svg" class="s-wordmark" alt="">
+      <div class="s-label" style="margin-top:12%; margin-bottom:4px;">Who We Are</div>
+      <div style="flex:1; display:grid; grid-template-columns:1fr 1fr; gap:12px; align-items:start;">
+        <div>
+          <div class="s-headline" style="font-size:16px; line-height:0.95;">Not a vendor.<br>A lifeline.</div>
+        </div>
+        <div>
+          <div class="s-body" style="font-size:5px;">With a strong focus on good user experience and code quality we are known for developing web and mobile applications that earn us recurring customers.</div>
+          <div class="s-body" style="font-size:5px; margin-top:4px;">As leading experts in our field we also provide training in the form of workshops. An eye-catching list of our services would look something like this.</div>
+        </div>
+      </div>
+      <div class="s-label" style="position:absolute; bottom:8%; right:8%;">About Musketeers</div>
+    </div>
+    <div class="slide-label">05 — Two Column</div>
+  </div>
+
+  <!-- 6. LIST SLIDE -->
+  <div class="slide" style="background:#fff;">
+    <div class="s-inner">
+      <img src="../assets/wordmark-dark.svg" class="s-wordmark" alt="">
+      <div style="flex:1; display:flex; flex-direction:column; justify-content:center; gap:4px; padding-top:6%;">
+        <div style="display:flex; align-items:baseline; gap:5px;">
+          <span style="font-family:'Inter',sans-serif; font-size:10px; color:#A8A8A8;">×</span>
+          <span class="s-headline" style="font-size:14px;">Brand Identity</span>
+        </div>
+        <div style="display:flex; align-items:baseline; gap:5px;">
+          <span style="font-family:'Inter',sans-serif; font-size:10px; color:#A8A8A8;">×</span>
+          <span class="s-headline" style="font-size:14px;">Website Design</span>
+        </div>
+        <div style="display:flex; align-items:baseline; gap:5px;">
+          <span style="font-family:'Inter',sans-serif; font-size:10px; color:#A8A8A8;">×</span>
+          <span class="s-headline" style="font-size:14px;">SaaS Co-Launch</span>
+        </div>
+        <div style="display:flex; align-items:baseline; gap:5px;">
+          <span style="font-family:'Inter',sans-serif; font-size:10px; color:#A8A8A8;">×</span>
+          <span class="s-headline" style="font-size:14px;">AI Operations</span>
+        </div>
+      </div>
+      <div class="s-label" style="position:absolute; bottom:8%; left:8%;">Our Services</div>
+    </div>
+    <div class="slide-label">06 — List</div>
+  </div>
+
+  <!-- 7. CONTENT + IMAGE -->
+  <div class="slide" style="background:#fff;">
+    <div class="s-inner" style="flex-direction:row; gap:8%; padding:6% 8%;">
+      <img src="../assets/wordmark-dark.svg" class="s-wordmark" alt="">
+      <div style="flex:1; display:flex; flex-direction:column; justify-content:center; gap:6px;">
+        <div class="s-label">Latest Projects</div>
+        <div class="s-headline" style="font-size:16px;">Genesys<br>Ecosystem</div>
+        <div class="s-body" style="font-size:5px;">Together with Genesys and Drum we created two interactive learning modules in the form of immersive experiences.</div>
+      </div>
+      <div style="flex:0 0 40%; background:#F5F5F5; display:flex; align-items:center; justify-content:center;">
+        <div style="font-size:7px; color:#A8A8A8; font-family:'Inter',sans-serif; font-weight:500;">IMAGE</div>
+      </div>
+    </div>
+    <div class="slide-label">07 — Content + Image</div>
+  </div>
+
+  <!-- 8. CLOSING / BIG WORDMARK -->
+  <div class="slide" style="background:#000;">
+    <div class="s-inner" style="align-items:center; justify-content:center; gap:10px;">
+      <img src="../assets/wordmark-light.svg" alt="" style="height:16px; width:auto; opacity:0.9;">
+      <div class="s-body-light" style="font-size:5px; text-align:center;">Brand &amp; Business Solutions</div>
+      <div class="s-stripe" style="position:absolute; bottom:0; left:0; right:0;"></div>
+    </div>
+    <div class="slide-label">08 — Closing</div>
+  </div>
+
+</div>
+
+</body></html>

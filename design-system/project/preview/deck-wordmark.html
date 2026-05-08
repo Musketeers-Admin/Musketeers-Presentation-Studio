@@ -1,0 +1,271 @@
+<!DOCTYPE html>
+<html><head><meta charset="UTF-8">
+<link rel="stylesheet" href="../colors_and_type.css">
+<style>
+* { box-sizing: border-box; margin: 0; padding: 0; }
+body { background: #fff; padding: 0; font-family: 'Inter', sans-serif; }
+
+/* ── Swiss grid container ── */
+.page { max-width: 700px; margin: 0 auto; }
+
+/* ── Top header band ── */
+.header {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  border-bottom: 2px solid #000;
+  padding: 20px 24px 16px;
+}
+.header-title {
+  font-family: 'Inter Display','Inter',sans-serif;
+  font-weight: 700;
+  font-size: 22px;
+  letter-spacing: -0.03em;
+  line-height: 1.1;
+  color: #000;
+}
+.header-sub {
+  font-size: 11px;
+  font-weight: 400;
+  color: #707070;
+  line-height: 1.6;
+  align-self: end;
+  text-align: right;
+}
+
+/* ── Grid anatomy section ── */
+.anatomy-section {
+  display: grid;
+  grid-template-columns: 200px 1fr;
+  border-bottom: 1px solid #E8E8E8;
+}
+.anatomy-label {
+  padding: 20px 24px;
+  border-right: 1px solid #E8E8E8;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+.anatomy-label .al-title {
+  font-family: 'Inter Display','Inter',sans-serif;
+  font-size: 13px;
+  font-weight: 700;
+  color: #000;
+  letter-spacing: -0.01em;
+}
+.anatomy-label .al-desc {
+  font-size: 10px;
+  color: #A8A8A8;
+  line-height: 1.5;
+  margin-top: 4px;
+}
+.anatomy-slide { padding: 20px; }
+
+/* ── Slide container ── */
+.slide {
+  width: 100%;
+  aspect-ratio: 16/9;
+  position: relative;
+  overflow: hidden;
+}
+.si { width: 100%; height: 100%; position: relative; }
+
+/* ── Zone markers ── */
+.z {
+  position: absolute;
+  border: 1px dashed rgba(0,0,0,0.15);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.zl {
+  font-size: 6px;
+  font-weight: 600;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  color: rgba(0,0,0,0.25);
+  text-align: center;
+  line-height: 1.3;
+}
+
+/* ── Mini-slide text ── */
+.wm { position: absolute; top: 6.5%; left: 50%; transform: translateX(-50%); height: 6px; width: auto; opacity: 0.35; }
+.lbl { font-family: 'Inter', sans-serif; font-size: 5.5px; font-weight: 500; letter-spacing: 0.1em; text-transform: uppercase; color: #A8A8A8; }
+.lbl-w { color: rgba(255,255,255,0.3); }
+.body-sm { font-family: 'Inter', sans-serif; font-size: 5px; font-weight: 400; line-height: 1.6; color: #A8A8A8; }
+.body-sm-w { color: rgba(255,255,255,0.35); }
+.hl { font-family: 'Inter Display','Inter', sans-serif; font-weight: 700; letter-spacing: -0.05em; line-height: 0.88; color: #000; }
+.hl-w { color: #fff; }
+
+/* ── Slides grid: 2-up row ── */
+.slides-row {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  border-bottom: 1px solid #E8E8E8;
+}
+.slide-cell {
+  padding: 16px;
+  border-right: 1px solid #E8E8E8;
+}
+.slide-cell:last-child { border-right: none; }
+.slide-cell-label {
+  font-size: 9px;
+  font-weight: 600;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: #A8A8A8;
+  margin-bottom: 8px;
+}
+
+/* ── Rules section ── */
+.rules {
+  display: grid;
+  grid-template-columns: 200px 1fr;
+  border-bottom: 1px solid #E8E8E8;
+}
+.rules-title {
+  padding: 20px 24px;
+  border-right: 1px solid #E8E8E8;
+  font-family: 'Inter Display','Inter',sans-serif;
+  font-size: 13px;
+  font-weight: 700;
+  color: #000;
+}
+.rules-body {
+  padding: 20px 24px;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 14px;
+}
+.rule {
+  font-size: 11px;
+  line-height: 1.6;
+  color: #484848;
+}
+.rule strong { color: #000; font-weight: 600; }
+.rule code { font-size: 10px; background: #F5F5F5; padding: 1px 4px; }
+
+/* ── Footer band ── */
+.footer {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 12px 24px;
+  border-top: 2px solid #000;
+}
+.footer-left { font-size: 10px; font-weight: 600; letter-spacing: 0.1em; text-transform: uppercase; color: #A8A8A8; }
+.footer-right { height: 10px; width: auto; opacity: 0.3; }
+</style>
+</head><body>
+
+<div class="page">
+
+  <!-- ═══ HEADER ═══ -->
+  <div class="header">
+    <div class="header-title">Deck Wordmark<br>Placement</div>
+    <div class="header-sub">4-corner grid system<br>Musketeers pitch deck · 1920×1080</div>
+  </div>
+
+  <!-- ═══ ANATOMY ═══ -->
+  <div class="anatomy-section">
+    <div class="anatomy-label">
+      <div class="al-title">Grid Anatomy</div>
+      <div class="al-desc">Every slide follows a<br>6-zone spatial framework.<br>Wordmark is always a<br>quiet supporting element.</div>
+    </div>
+    <div class="anatomy-slide">
+      <div class="slide" style="background:#fff; border:1px solid #E8E8E8;">
+        <div class="si">
+          <div class="z" style="top:4%; left:42%; width:16%; height:7%;"><span class="zl">Wordmark</span></div>
+          <div class="z" style="top:5%; left:5%; width:24%; height:6%;"><span class="zl">Label</span></div>
+          <div class="z" style="top:5%; right:5%; width:28%; height:16%;"><span class="zl">Body (opt.)</span></div>
+          <div class="z" style="top:30%; left:5%; width:52%; height:44%;"><span class="zl">Main Content</span></div>
+          <div class="z" style="bottom:5%; left:5%; width:20%; height:6%;"><span class="zl">Section</span></div>
+          <div class="z" style="bottom:5%; right:5%; width:22%; height:6%;"><span class="zl">Tagline</span></div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- ═══ SLIDE EXAMPLES — ROW 1 ═══ -->
+  <div class="slides-row">
+    <div class="slide-cell">
+      <div class="slide-cell-label">01 — Title (White)</div>
+      <div class="slide" style="background:#fff; border:1px solid #F0F0F0;">
+        <div class="si" style="padding:7% 6%;">
+          <img src="../assets/wordmark-dark.svg" class="wm" alt="">
+          <div class="lbl" style="position:absolute; top:7%; left:6%;">Brand & Business Solutions</div>
+          <div style="position:absolute; bottom:18%; left:6%;">
+            <div class="hl" style="font-size:32px;">Beautiful<br>user<br>experiences</div>
+          </div>
+          <div class="lbl" style="position:absolute; bottom:7%; left:6%;">About Musketeers</div>
+        </div>
+      </div>
+    </div>
+    <div class="slide-cell">
+      <div class="slide-cell-label">02 — Stat (White)</div>
+      <div class="slide" style="background:#fff; border:1px solid #F0F0F0;">
+        <div class="si" style="padding:7% 6%;">
+          <img src="../assets/wordmark-dark.svg" class="wm" alt="">
+          <div class="lbl" style="position:absolute; top:7%; left:6%;">Revenue Growth</div>
+          <div class="body-sm" style="position:absolute; top:7%; right:6%; width:30%; text-align:right;">Year-over-year growth driven by persistent innovation.</div>
+          <div style="position:absolute; top:50%; left:50%; transform:translate(-50%,-50%);">
+            <div class="hl" style="font-size:52px;">23%</div>
+          </div>
+          <div class="lbl" style="position:absolute; bottom:7%; right:6%;">Q4 2025</div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- ═══ SLIDE EXAMPLES — ROW 2 ═══ -->
+  <div class="slides-row">
+    <div class="slide-cell">
+      <div class="slide-cell-label">03 — Statement (Dark)</div>
+      <div class="slide" style="background:#000;">
+        <div class="si" style="padding:7% 6%;">
+          <img src="../assets/wordmark-light.svg" class="wm" style="opacity:0.25;" alt="">
+          <div style="position:absolute; top:24%; left:6%; right:14%;">
+            <div class="hl hl-w" style="font-size:14px; font-weight:600; line-height:1.25; letter-spacing:-0.03em;">We help entrepreneurs with versatile solutions, driven by persistent innovation.</div>
+          </div>
+          <div class="lbl lbl-w" style="position:absolute; bottom:7%; left:6%;">What We Do</div>
+          <div class="body-sm body-sm-w" style="position:absolute; bottom:7%; right:6%; width:35%; text-align:right;">As leading experts in our field we also provide consulting.</div>
+        </div>
+      </div>
+    </div>
+    <div class="slide-cell">
+      <div class="slide-cell-label">04 — Divider (Dark)</div>
+      <div class="slide" style="background:#000;">
+        <div class="si" style="padding:7% 6%;">
+          <img src="../assets/wordmark-light.svg" class="wm" style="opacity:0.25;" alt="">
+          <div style="position:absolute; bottom:18%; left:6%;">
+            <div class="hl hl-w" style="font-size:44px;">Our Work</div>
+          </div>
+          <div class="body-sm body-sm-w" style="position:absolute; bottom:7%; left:6%; width:42%;">As leading experts in our field we provide training in the form of workshops.</div>
+          <div class="lbl lbl-w" style="position:absolute; bottom:7%; right:6%;">Brand & Business Solutions</div>
+          <div style="position:absolute; bottom:0; left:0; right:0; height:2px; background:linear-gradient(to right,#FFD81D 0%,#FC2511 33%,#6A00D0 49%,#2431F3 58%,#0D41FF 67%,#009A88 82%,#30E047 100%);"></div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- ═══ RULES ═══ -->
+  <div class="rules">
+    <div class="rules-title">Placement<br>Rules</div>
+    <div class="rules-body">
+      <div class="rule"><strong>Wordmark:</strong> Always top-center, ~10–12px height. <code>wordmark-dark.svg</code> on white at 35% opacity. <code>wordmark-light.svg</code> on dark at 25% opacity.</div>
+      <div class="rule"><strong>Top-left:</strong> Label or eyebrow — 11px, uppercase, wide tracking. Section name or topic identifier.</div>
+      <div class="rule"><strong>Top-right:</strong> Optional body text — 18px, regular weight, right-aligned. Provides secondary context.</div>
+      <div class="rule"><strong>Main zone:</strong> Hero headline, stat, or quote. Always the largest type. Positioned center or bottom-left.</div>
+      <div class="rule"><strong>Bottom-left:</strong> Section label — grounding context. "About Musketeers" or category name.</div>
+      <div class="rule"><strong>Bottom-right:</strong> Tagline or page reference. Never enlarge the wordmark — it stays top-center as a quiet brand anchor.</div>
+    </div>
+  </div>
+
+  <!-- ═══ FOOTER ═══ -->
+  <div class="footer">
+    <span class="footer-left">Musketeers Design System</span>
+    <img src="../assets/wordmark-dark.svg" class="footer-right" alt="">
+  </div>
+
+</div>
+
+</body></html>
