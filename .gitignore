@@ -25,8 +25,12 @@ backend/uploads/
 .DS_Store
 **/.DS_Store
 
-# Build output
+# Build output (Railway builds this from source — don't commit)
 frontend/build/
+
+# Local dev env
+frontend/.env.development.local
+frontend/.env.local
 
 # Logs
 npm-debug.log*

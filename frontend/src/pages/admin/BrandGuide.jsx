@@ -1,5 +1,6 @@
 import React, { useState, useEffect, useRef } from 'react';
 import axios from 'axios';
+import API_BASE from '../../config';
 
 const COLOR_FIELDS = [
   { key: 'primary_color',   label: 'Primary Blue',       default: '#0D41FF' },
@@ -166,7 +167,7 @@ function BrandGuide() {
                   <div className="logo-card-desc">{description}</div>
                   <div className="logo-preview" style={{ background: previewBg }}>
                     {logoPath ? (
-                      <img src={`http://localhost:3001${logoPath}`} alt={label} />
+                      <img src={`${API_BASE}${logoPath}`} alt={label} />
                     ) : (
                       <span className="logo-preview-empty" style={{ color: textColor }}>No logo</span>
                     )}

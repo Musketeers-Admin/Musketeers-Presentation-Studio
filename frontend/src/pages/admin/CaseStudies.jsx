@@ -1,5 +1,6 @@
 import React, { useState, useEffect, useRef } from 'react';
 import axios from 'axios';
+import API_BASE from '../../config';
 
 const INITIAL_FORM = {
   title: '', client_name: '', industry: '', service_type: '', client_type_tag: '',
@@ -88,7 +89,7 @@ function SectionImages({ caseStudyId, section, images, onImageAdded, onImageDele
           {displayImages.map(img => (
             <div key={isEdit ? img.id : img.key} style={{ display: 'flex', alignItems: 'center', gap: 10, background: 'white', borderRadius: 4, padding: '6px 8px', border: '1px solid var(--color-gray-border)' }}>
               <img
-                src={isEdit ? `http://localhost:3001${img.image_path}` : img.previewUrl}
+                src={isEdit ? `${API_BASE}${img.image_path}` : img.previewUrl}
                 alt={img.description || section}
                 style={{ width: 48, height: 48, objectFit: 'cover', borderRadius: 3, flexShrink: 0 }}
               />
@@ -418,7 +419,7 @@ function CaseStudies() {
                               .map(img => (
                                 <div key={img.id} style={{ position: 'relative' }}>
                                   <img
-                                    src={`http://localhost:3001${img.image_path}`}
+                                    src={`${API_BASE}${img.image_path}`}
                                     alt={img.description || section}
                                     style={{ width: 64, height: 64, objectFit: 'cover', borderRadius: 4, border: '1px solid var(--color-gray-border)' }}
                                   />

@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import { useNavigate } from 'react-router-dom';
 import axios from 'axios';
+import API_BASE from '../config';
 
 function getMeetingBadgeClass(type) {
   const map = { 'M1':'badge-m1','M2':'badge-m2','M3':'badge-m3','M2+M3':'badge-m2m3','M4':'badge-m4','M5':'badge-m5' };
@@ -248,10 +249,10 @@ function Dashboard() {
                     <td>
                       <div style={{ display: 'flex', gap: 6, flexWrap: 'wrap' }}>
                         {p.file_path_pptx && (
-                          <a href={`http://localhost:3001${p.file_path_pptx}`} className="download-btn download-btn-pptx" download>PPTX</a>
+                          <a href={`${API_BASE}${p.file_path_pptx}`} className="download-btn download-btn-pptx" download>PPTX</a>
                         )}
                         {p.file_path_pdf && (
-                          <a href={`http://localhost:3001${p.file_path_pdf}`} className="download-btn download-btn-pdf" download>PDF</a>
+                          <a href={`${API_BASE}${p.file_path_pdf}`} className="download-btn download-btn-pdf" download>PDF</a>
                         )}
                       </div>
                     </td>

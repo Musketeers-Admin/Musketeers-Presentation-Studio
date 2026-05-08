@@ -1,5 +1,6 @@
 import React, { useState, useEffect, useRef } from 'react';
 import axios from 'axios';
+import API_BASE from '../../config';
 
 function PartnerBrands() {
   const [brands, setBrands] = useState([]);
@@ -96,7 +97,7 @@ function PartnerBrands() {
               <div style={{ display: 'flex', justifyContent: 'center', alignItems: 'center', height: 80, background: 'var(--color-gray-bg)', borderRadius: 6, overflow: 'hidden' }}>
                 {brand.logo_path ? (
                   <img
-                    src={`http://localhost:3001${brand.logo_path}`}
+                    src={`${API_BASE}${brand.logo_path}`}
                     alt={brand.name}
                     style={{ maxWidth: '100%', maxHeight: '100%', objectFit: 'contain' }}
                   />
@@ -140,7 +141,7 @@ function PartnerBrands() {
                   <input ref={fileRef} type="file" accept=".png,.jpg,.jpeg,.gif,.webp,.svg" style={{ fontSize: 13 }} />
                   {editBrand?.logo_path && !fileRef.current?.files?.[0] && (
                     <div style={{ marginTop: 8 }}>
-                      <img src={`http://localhost:3001${editBrand.logo_path}`} alt="current" style={{ height: 48, objectFit: 'contain' }} />
+                      <img src={`${API_BASE}${editBrand.logo_path}`} alt="current" style={{ height: 48, objectFit: 'contain' }} />
                       <div style={{ fontSize: 11, color: 'var(--color-gray-text)', marginTop: 2 }}>Current logo — upload new to replace</div>
                     </div>
                   )}

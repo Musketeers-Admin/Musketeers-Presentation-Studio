@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import axios from 'axios';
+import API_BASE from '../../config';
 
 const INITIAL_CS_FORM = {
   title: '', client_name: '', industry: '', service_type: '',
@@ -350,7 +351,7 @@ function Step3({ state, updateState, onNext, onBack }) {
                 >
                   <div style={{ height: 44, display: 'flex', alignItems: 'center', justifyContent: 'center' }}>
                     {pb.logo_path ? (
-                      <img src={`http://localhost:3001${pb.logo_path}`} alt={pb.name} style={{ maxWidth: 80, maxHeight: 40, objectFit: 'contain' }} />
+                      <img src={`${API_BASE}${pb.logo_path}`} alt={pb.name} style={{ maxWidth: 80, maxHeight: 40, objectFit: 'contain' }} />
                     ) : (
                       <span style={{ fontSize: 24 }}>🤝</span>
                     )}

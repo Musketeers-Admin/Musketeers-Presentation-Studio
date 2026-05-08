@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
 import { useNavigate } from 'react-router-dom';
+import API_BASE from '../../config';
 import axios from 'axios';
 
 function Step4({ state, updateState, step3Skipped, onBack }) {
@@ -74,7 +75,7 @@ function Step4({ state, updateState, step3Skipped, onBack }) {
           <div className="download-actions step4-download-actions">
             {result.file_path_pptx && (
               <a
-                href={`http://localhost:3001${result.file_path_pptx}`}
+                href={`${API_BASE}${result.file_path_pptx}`}
                 className="btn btn-primary btn-lg"
                 download
               >
@@ -83,7 +84,7 @@ function Step4({ state, updateState, step3Skipped, onBack }) {
             )}
             {result.file_path_pdf && (
               <a
-                href={`http://localhost:3001${result.file_path_pdf}`}
+                href={`${API_BASE}${result.file_path_pdf}`}
                 className="btn btn-danger btn-lg"
                 download
               >

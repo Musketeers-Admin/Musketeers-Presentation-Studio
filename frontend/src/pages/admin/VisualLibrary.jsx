@@ -1,5 +1,6 @@
 import React, { useState, useEffect, useRef } from 'react';
 import axios from 'axios';
+import API_BASE from '../../config';
 
 function VisualLibrary() {
   const [images, setImages] = useState([]);
@@ -138,7 +139,7 @@ function VisualLibrary() {
           {images.map(img => (
             <div key={img.id} className="image-card">
               <img
-                src={`http://localhost:3001${img.file_path}`}
+                src={`${API_BASE}${img.file_path}`}
                 alt={img.description || img.original_name}
                 onError={e => {
                   e.target.style.display = 'none';

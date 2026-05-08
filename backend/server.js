@@ -5,16 +5,25 @@ const path = require('path');
 const fs = require('fs');
 const db = require('./database');
 
+// In production (Railway), use a mounted persistent volume via DATA_DIR env var.
+// Locally, files live inside the backend/ folder as before.
+const DATA_DIR   = process.env.DATA_DIR   || __dirname;
+const OUTPUTS_DIR = process.env.OUTPUTS_DIR || path.join(DATA_DIR, 'outputs');
+const UPLOADS_DIR = process.env.UPLOADS_DIR || path.join(DATA_DIR, 'uploads');
+
+// Expose resolved paths so routes/services can import them
+process.env._OUTPUTS_DIR = OUTPUTS_DIR;
+process.env._UPLOADS_DIR = UPLOADS_DIR;
+
 const app = express();
 app.use(cors());
 app.use(express.json());
-app.use('/outputs', express.static(path.join(__dirname, 'outputs')));
-app.use('/uploads', express.static(path.join(__dirname, 'uploads')));
+app.use('/outputs', express.static(OUTPUTS_DIR));
+app.use('/uploads', express.static(UPLOADS_DIR));
 
-// Ensure directories exist
-['outputs', 'uploads'].forEach(dir => {
-  const dirPath = path.join(__dirname, dir);
-  if (!fs.existsSync(dirPath)) fs.mkdirSync(dirPath, { recursive: true });
+// Ensure data directories exist
+[OUTPUTS_DIR, UPLOADS_DIR].forEach(dir => {
+  if (!fs.existsSync(dir)) fs.mkdirSync(dir, { recursive: true });
 });
 
 // Startup cleanup
@@ -102,6 +111,15 @@ app.use('/api/meeting-results', require('./routes/meeting-results'));
 app.use('/api/partner-brands', require('./routes/partner-brands'));
 app.use('/api/brand-guide', require('./routes/brand-guide'));
 app.use('/api/client-types', require('./routes/client-types'));
+
+// In production, serve the React build from Express
+if (process.env.NODE_ENV === 'production') {
+  const buildPath = path.join(__dirname, '../frontend/build');
+  if (fs.existsSync(buildPath)) {
+    app.use(express.static(buildPath));
+    app.get('*', (_req, res) => res.sendFile(path.join(buildPath, 'index.html')));
+  }
+}
 
 const PORT = process.env.PORT || 3001;
 app.listen(PORT, () => console.log(`Backend running on http://localhost:${PORT}`));

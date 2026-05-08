@@ -1,6 +1,7 @@
 import React, { useState, useEffect, useRef } from 'react';
 import { useParams, useNavigate } from 'react-router-dom';
 import axios from 'axios';
+import API_BASE from '../config';
 
 const CLIENT_TYPES = ['POD Seller','POD Enterprise','E-commerce brand','SaaS / Tech','Agency','Creator / Influencer','Other'];
 
@@ -120,11 +121,11 @@ function MeetingResultCard({ result }) {
         <div style={{ display: 'flex', flexWrap: 'wrap', gap: 8, marginTop: 8 }}>
           {result.file_paths.map((fp, i) => (
             isImage(fp) ? (
-              <a key={i} href={`http://localhost:3001${fp}`} target="_blank" rel="noreferrer">
-                <img src={`http://localhost:3001${fp}`} alt="attachment" style={{ width: 80, height: 80, objectFit: 'cover', borderRadius: 4, border: '1px solid var(--color-gray-border)' }} />
+              <a key={i} href={`${API_BASE}${fp}`} target="_blank" rel="noreferrer">
+                <img src={`${API_BASE}${fp}`} alt="attachment" style={{ width: 80, height: 80, objectFit: 'cover', borderRadius: 4, border: '1px solid var(--color-gray-border)' }} />
               </a>
             ) : (
-              <a key={i} href={`http://localhost:3001${fp}`} target="_blank" rel="noreferrer" className="btn btn-secondary btn-sm" style={{ fontSize: 12 }}>
+              <a key={i} href={`${API_BASE}${fp}`} target="_blank" rel="noreferrer" className="btn btn-secondary btn-sm" style={{ fontSize: 12 }}>
                 📄 {fp.split('/').pop()}
               </a>
             )
@@ -569,10 +570,10 @@ function ClientRecord() {
                       <td>
                         <div style={{ display: 'flex', gap: 6 }}>
                           {p.file_path_pptx && (
-                            <a href={`http://localhost:3001${p.file_path_pptx}`} className="download-btn download-btn-pptx" download>PPTX</a>
+                            <a href={`${API_BASE}${p.file_path_pptx}`} className="download-btn download-btn-pptx" download>PPTX</a>
                           )}
                           {p.file_path_pdf && (
-                            <a href={`http://localhost:3001${p.file_path_pdf}`} className="download-btn download-btn-pdf" download>PDF</a>
+                            <a href={`${API_BASE}${p.file_path_pdf}`} className="download-btn download-btn-pdf" download>PDF</a>
                           )}
                         </div>
                       </td>
