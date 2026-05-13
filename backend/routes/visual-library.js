@@ -2,10 +2,14 @@ const express = require('express');
 const router = express.Router();
 const multer = require('multer');
 const path = require('path');
+const fs = require('fs');
 const db = require('../database');
 
+const visualDir = path.join(process.env.UPLOADS_DIR || path.join(__dirname, '..', 'uploads'), 'visual-library');
+if (!fs.existsSync(visualDir)) fs.mkdirSync(visualDir, { recursive: true });
+
 const storage = multer.diskStorage({
-  destination: (req, file, cb) => cb(null, path.join(__dirname, '..', 'uploads')),
+  destination: (req, file, cb) => cb(null, visualDir),
   filename: (req, file, cb) => cb(null, Date.now() + '-' + file.originalname.replace(/\s/g, '_'))
 });
 const upload = multer({ storage });
@@ -23,7 +27,7 @@ router.get('/', (req, res) => {
 
 router.post('/', upload.single('image'), (req, res) => {
   const { description, tags } = req.body;
-  const filePath = `/uploads/${req.file.filename}`;
+  const filePath = `/uploads/visual-library/${req.file.filename}`;
   const r = db.prepare('INSERT INTO visual_library (filename, original_name, description, tags, file_path) VALUES (?, ?, ?, ?, ?)').run(req.file.filename, req.file.originalname, description, tags, filePath);
   res.json(db.prepare('SELECT * FROM visual_library WHERE id = ?').get(r.lastInsertRowid));
 });
