@@ -160,6 +160,17 @@ db.exec(`
     example_companies TEXT,
     created_at DATETIME DEFAULT CURRENT_TIMESTAMP
   );
+
+  CREATE TABLE IF NOT EXISTS users (
+    id INTEGER PRIMARY KEY AUTOINCREMENT,
+    email TEXT UNIQUE NOT NULL,
+    password_hash TEXT NOT NULL,
+    name TEXT NOT NULL,
+    role TEXT NOT NULL DEFAULT 'member',
+    active INTEGER NOT NULL DEFAULT 1,
+    created_at DATETIME DEFAULT CURRENT_TIMESTAMP,
+    last_login DATETIME
+  );
 `);
 
 // Idempotent migrations
@@ -386,6 +397,19 @@ if (brandGuideCount.count === 0) {
     insertBG.run('text_secondary', '#707070');
   });
   seedBG();
+}
+
+// Seed admin users if none exist
+const usersCount = db.prepare('SELECT COUNT(*) as count FROM users').get();
+if (usersCount.count === 0) {
+  const bcrypt = require('bcryptjs');
+  const insertUser = db.prepare('INSERT OR IGNORE INTO users (email, password_hash, name, role, active) VALUES (?, ?, ?, ?, 1)');
+  const seedUsers = db.transaction(() => {
+    insertUser.run('borno@designmusketeer.com', bcrypt.hashSync('Admin@DM2026', 10), 'Borno', 'admin');
+    insertUser.run('smlantor@gmail.com', bcrypt.hashSync('Admin@DM2026', 10), 'Antor', 'admin');
+    insertUser.run('admin@designmusketeer.com', bcrypt.hashSync('Admin@DM2026', 10), 'Admin', 'admin');
+  });
+  seedUsers();
 }
 
 module.exports = db;
